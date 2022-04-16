@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <title>Bootstrap</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
+<title>Bootstrap</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
 <body>
-    <div class="container p-5 my-5 bg-dark text-white text-center">
-    <h2>個人情報入力</h2>
-    <div class="container p-5 my-5 bg-info text-white text-center">
+	<div class="container p-5 my-5 bg-dark text-white text-center">
+		<h2>個人情報入力</h2>
+		<div class="container p-5 my-5 bg-info text-white text-center">
 
-<h6 class="display-5">
-<form  th:action="@{/userinformation}" th:object="${userRequest}" method="post">
-        
-        <table>
-        <tr>
-                <th class="cell_title">ユーザー名</th>
-                <td><input type="text" th:field="*{user}"></td>
-            </tr>
-            <tr>
-                <th class="cell_title">パスワード</th>
-                <td><input type="password" th:field="*{pwd}"></td>
-            </tr>
-             <tr>
-                <th class="cell_title">ID</th>
-                <td><input type="text" th:field="*{id}"></td>
-            </tr>
-            <tr>
-                <th class="cell_title">名前</th>
-                <td><input type="text" th:field="*{name}"></td>
-            </tr>
-            <tr>
-                <th class="cell_title">住所</th>
-                <td><input type="text" th:field="*{address}"></td>
-            </tr>
-            <tr>
-                <th class="cell_title">電話番号</th>
-                <td><input type="text" th:field="*{phone}"></td>
-            </tr>
-        </table>
-        <div class="btn_area_center  btn btn-danger ">
-            <input type="submit"  value="登録" class="btn">
-        </div>
-    </form>
+			<h6 class="display-5">
+				<form th:action="@{/userinformation}" th:object="${userRequest}" method="post">
 
-
+					<table>
+						<tr>
+							<th class="cell_title">ユーザー名</th>
+							<td><input type="text" th:field="*{user}"></td>
+						</tr>
+						<tr>
+							<th class="cell_title">パスワード</th>
+							<td><input type="password" th:field="*{pwd}"></td>
+						</tr>
+						<tr>
+							<th class="cell_title">ID</th>
+							<td><input type="text" th:field="*{id}"></td>
+						</tr>
+						<tr>
+							<th class="cell_title">名前</th>
+							<td><input type="text" th:field="*{name}"></td>
+						</tr>
+						<tr>
+							<th class="cell_title">住所</th>
+							<td><input type="text" th:field="*{address}"></td>
+						</tr>
+						<tr>
+							<th class="cell_title">電話番号</th>
+							<td><input type="text" th:field="*{phone}"></td>
+						</tr>
+					</table>
+					<div class="btn_area_center  btn btn-danger ">
+						<input type="submit" value="登録" class="btn">
+					</div>
+				</form>
 
 
 
 
-   <!-- <form action="/action_page.php">
+
+
+				<!-- <form action="/action_page.php">
   <label for="fname">ファーストネーム:</label><br>
   <input type="text" id="fname" name="fname" value=""><br>
   <label for="lname">ラストネーム:</label><br>
@@ -63,8 +63,9 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>-->
 
-</h6>
-</div>
-</div>
+			</h6>
+		</div>
+	</div>
 </body>
+
 </html>
