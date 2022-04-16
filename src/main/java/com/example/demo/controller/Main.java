@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,54 +17,44 @@ import com.example.demo.service.LoginService;
 
 import lombok.extern.slf4j.Slf4j;
 
-	@Controller
-	@Slf4j
-	public class Main {
+@Controller
+@Slf4j
+public class Main {
 
-	    @Autowired
-	    private LoginService service;
-		
+	@Autowired
+	private LoginService service;
 
-		
-	    @GetMapping("/userlogin")
-	    public String hello(Model model) {
-	        return "userlogin";
-	    }
-	    
-	    @PostMapping("/logined")
-	    public String loginCheck(Input request,Model model) {
-	    	
-	    	service.checklogin(request,model);
-	    
-	    	
-	    	return "userlogin";
-	    	
-	    }
-	
-	    @RequestMapping("/newregister")
-	    public String defectDetails(@ModelAttribute("userRequest") Input input,Model model) {
-	    	
-	        return "newregister";
-	    
-	    }
-	    @RequestMapping(value = "/userinformation", method = RequestMethod.POST)
-	   // @RequestMapping(value = "/userinformation"  method = RequestMethod.POST )
-	    public String create(@Validated @ModelAttribute Input userRequest, Model model) {
-	        
-	        service.insertNewUser(userRequest);
-	       
-	        List<Input> userList =  service.getList();
-	        model.addAttribute("userinformation", userList);
-	     
-	       
-	        return "/userinformation";
-	        
-	    }   
-	        
-	        
-	        
-	        
-	    
-	   
-	    
-	    }
+	@GetMapping("/userlogin")
+	public String hello(Model model) {
+		return "userlogin";
+	}
+
+	@PostMapping("/logined")
+	public String loginCheck(Input request, Model model) {
+
+		service.checklogin(request, model);
+
+		return "userlogin";
+
+	}
+
+	@RequestMapping("/newregister")
+	public String defectDetails(@ModelAttribute("userRequest") Input input, Model model) {
+
+		return "newregister";
+
+	}
+
+	@RequestMapping(value = "/userinformation", method = RequestMethod.POST)
+	// @RequestMapping(value = "/userinformation" method = RequestMethod.POST )
+	public String create(@Validated @ModelAttribute Input userRequest, Model model) {
+
+		service.insertNewUser(userRequest);
+
+		List<Input> userList = service.getList();
+		model.addAttribute("userinformation", userList);
+
+		return "/userinformation";
+
+	}
+}
