@@ -10,15 +10,8 @@ public interface LoginService {
 
 	void insertNewUser(Input userRequest);
 
-
-
-	
-		
-	
-
 	java.util.List<Input> getList();
 
 	java.util.List<Input> searchAll();
 
-	
 }
